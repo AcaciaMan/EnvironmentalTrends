@@ -110,4 +110,94 @@ pip install environmentaltrends
 
 An example of `environmentaltrends` usage will be provided in a future update.
 
+## Usage Examples
 
+### Initializing the `TrendData` class
+
+```python
+import pandas as pd
+from environmentaltrends.trends import TrendData
+
+# Create a sample DataFrame
+data = pd.DataFrame({
+    'Date': pd.date_range(start='1/1/2000', periods=100, freq='M'),
+    'Value': range(100)
+})
+
+# Initialize the TrendData class
+trend_data = TrendData(data=data, value_col='Value', date_col='Date')
+```
+
+### Calling the `trends` method with required parameters
+
+```python
+# Calculate trends
+results = trend_data.trends(
+    seasons_per_year=12,
+    trend_lengths=[10],
+    end_years=[2009, 2019]
+)
+
+print(results)
+```
+
+### Handling censored data
+
+```python
+import pandas as pd
+from environmentaltrends.trends import TrendData
+
+# Create a sample DataFrame with censored data
+data = pd.DataFrame({
+    'Date': pd.date_range(start='1/1/2000', periods=100, freq='M'),
+    'Value': ['<1' if i < 10 else i for i in range(100)]
+})
+
+# Initialize the TrendData class with censored data
+trend_data = TrendData(data=data, value_col='Value', date_col='Date', censored_values=True)
+
+# Calculate trends
+results = trend_data.trends(
+    seasons_per_year=12,
+    trend_lengths=[10],
+    end_years=[2009, 2019]
+)
+
+print(results)
+```
+
+### Using different reduction methods
+
+```python
+import pandas as pd
+from environmentaltrends.trends import TrendData
+
+# Create a sample DataFrame with multiple results per season
+data = pd.DataFrame({
+    'Date': pd.date_range(start='1/1/2000', periods=200, freq='15D'),
+    'Value': range(200)
+})
+
+# Initialize the TrendData class
+trend_data = TrendData(data=data, value_col='Value', date_col='Date')
+
+# Calculate trends using the 'median' reduction method
+results_median = trend_data.trends(
+    seasons_per_year=12,
+    trend_lengths=[10],
+    end_years=[2009, 2019],
+    reduction_method='median'
+)
+
+print(results_median)
+
+# Calculate trends using the 'midpoint' reduction method
+results_midpoint = trend_data.trends(
+    seasons_per_year=12,
+    trend_lengths=[10],
+    end_years=[2009, 2019],
+    reduction_method='midpoint'
+)
+
+print(results_midpoint)
+```
