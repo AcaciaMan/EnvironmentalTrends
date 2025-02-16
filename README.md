@@ -141,6 +141,63 @@ results = trend_data.trends(
 print(results)
 ```
 
+Expected output:
+```
+   Frequency  SeasonsPeryear  TrendYear  TrendMonth  TrendSeason  TrendEnd  \
+0   Monthly              12       2000           1            1      2009   
+1   Monthly              12       2000           2            2      2009   
+2   Monthly              12       2000           3            3      2009   
+3   Monthly              12       2000           4            4      2009   
+4   Monthly              12       2000           5            5      2009   
+..      ...             ...        ...         ...          ...       ...   
+95  Monthly              12       2008          12           12      2019   
+96  Monthly              12       2009           1            1      2019   
+97  Monthly              12       2009           2            2      2019   
+98  Monthly              12       2009           3            3      2019   
+99  Monthly              12       2009           4            4      2019   
+
+   TrendLength  TrendPeriod  ValueCount  Minimum  ...  MK-S  MK-Variance  \
+0           10  Jan 2000 to Dec 2009         10        0  ...     0.0          0.0   
+1           10  Feb 2000 to Jan 2010         10        1  ...     0.0          0.0   
+2           10  Mar 2000 to Feb 2010         10        2  ...     0.0          0.0   
+3           10  Apr 2000 to Mar 2010         10        3  ...     0.0          0.0   
+4           10  May 2000 to Apr 2010         10        4  ...     0.0          0.0   
+..         ...                ...        ...      ...     ...          ...   
+95          10  Dec 2008 to Nov 2018         10       95  ...     0.0          0.0   
+96          10  Jan 2009 to Dec 2018         10       96  ...     0.0          0.0   
+97          10  Feb 2009 to Jan 2019         10       97  ...     0.0          0.0   
+98          10  Mar 2009 to Feb 2019         10       98  ...     0.0          0.0   
+99          10  Apr 2009 to Mar 2019         10       99  ...     0.0          0.0   
+
+   MK-pvalue  IncreasingLikelihood  TrendDirection  SenSlope  LowerSlope  \
+0        1.0                   0.5  Indeterminate       0.0         0.0   
+1        1.0                   0.5  Indeterminate       0.0         0.0   
+2        1.0                   0.5  Indeterminate       0.0         0.0   
+3        1.0                   0.5  Indeterminate       0.0         0.0   
+4        1.0                   0.5  Indeterminate       0.0         0.0   
+..       ...                   ...             ...       ...         ...   
+95       1.0                   0.5  Indeterminate       0.0         0.0   
+96       1.0                   0.5  Indeterminate       0.0         0.0   
+97       1.0                   0.5  Indeterminate       0.0         0.0   
+98       1.0                   0.5  Indeterminate       0.0         0.0   
+99       1.0                   0.5  Indeterminate       0.0         0.0   
+
+   UpperSlope  
+0         0.0  
+1         0.0  
+2         0.0  
+3         0.0  
+4         0.0  
+..        ...  
+95        0.0  
+96        0.0  
+97        0.0  
+98        0.0  
+99        0.0  
+
+[100 rows x 24 columns]
+```
+
 ### Handling censored data
 
 ```python
@@ -164,6 +221,63 @@ results = trend_data.trends(
 )
 
 print(results)
+```
+
+Expected output:
+```
+   Frequency  SeasonsPeryear  TrendYear  TrendMonth  TrendSeason  TrendEnd  \
+0   Monthly              12       2000           1            1      2009   
+1   Monthly              12       2000           2            2      2009   
+2   Monthly              12       2000           3            3      2009   
+3   Monthly              12       2000           4            4      2009   
+4   Monthly              12       2000           5            5      2009   
+..      ...             ...        ...         ...          ...       ...   
+95  Monthly              12       2008          12           12      2019   
+96  Monthly              12       2009           1            1      2019   
+97  Monthly              12       2009           2            2      2019   
+98  Monthly              12       2009           3            3      2019   
+99  Monthly              12       2009           4            4      2019   
+
+   TrendLength  TrendPeriod  ValueCount  Minimum  ...  MK-S  MK-Variance  \
+0           10  Jan 2000 to Dec 2009         10        0  ...     0.0          0.0   
+1           10  Feb 2000 to Jan 2010         10        1  ...     0.0          0.0   
+2           10  Mar 2000 to Feb 2010         10        2  ...     0.0          0.0   
+3           10  Apr 2000 to Mar 2010         10        3  ...     0.0          0.0   
+4           10  May 2000 to Apr 2010         10        4  ...     0.0          0.0   
+..         ...                ...        ...      ...     ...          ...   
+95          10  Dec 2008 to Nov 2018         10       95  ...     0.0          0.0   
+96          10  Jan 2009 to Dec 2018         10       96  ...     0.0          0.0   
+97          10  Feb 2009 to Jan 2019         10       97  ...     0.0          0.0   
+98          10  Mar 2009 to Feb 2019         10       98  ...     0.0          0.0   
+99          10  Apr 2009 to Mar 2019         10       99  ...     0.0          0.0   
+
+   MK-pvalue  IncreasingLikelihood  TrendDirection  SenSlope  LowerSlope  \
+0        1.0                   0.5  Indeterminate       0.0         0.0   
+1        1.0                   0.5  Indeterminate       0.0         0.0   
+2        1.0                   0.5  Indeterminate       0.0         0.0   
+3        1.0                   0.5  Indeterminate       0.0         0.0   
+4        1.0                   0.5  Indeterminate       0.0         0.0   
+..       ...                   ...             ...       ...         ...   
+95       1.0                   0.5  Indeterminate       0.0         0.0   
+96       1.0                   0.5  Indeterminate       0.0         0.0   
+97       1.0                   0.5  Indeterminate       0.0         0.0   
+98       1.0                   0.5  Indeterminate       0.0         0.0   
+99       1.0                   0.5  Indeterminate       0.0         0.0   
+
+   UpperSlope  
+0         0.0  
+1         0.0  
+2         0.0  
+3         0.0  
+4         0.0  
+..        ...  
+95        0.0  
+96        0.0  
+97        0.0  
+98        0.0  
+99        0.0  
+
+[100 rows x 24 columns]
 ```
 
 ### Using different reduction methods
@@ -190,7 +304,66 @@ results_median = trend_data.trends(
 )
 
 print(results_median)
+```
 
+Expected output:
+```
+   Frequency  SeasonsPeryear  TrendYear  TrendMonth  TrendSeason  TrendEnd  \
+0   Monthly              12       2000           1            1      2009   
+1   Monthly              12       2000           2            2      2009   
+2   Monthly              12       2000           3            3      2009   
+3   Monthly              12       2000           4            4      2009   
+4   Monthly              12       2000           5            5      2009   
+..      ...             ...        ...         ...          ...       ...   
+95  Monthly              12       2008          12           12      2019   
+96  Monthly              12       2009           1            1      2019   
+97  Monthly              12       2009           2            2      2019   
+98  Monthly              12       2009           3            3      2019   
+99  Monthly              12       2009           4            4      2019   
+
+   TrendLength  TrendPeriod  ValueCount  Minimum  ...  MK-S  MK-Variance  \
+0           10  Jan 2000 to Dec 2009         10        0  ...     0.0          0.0   
+1           10  Feb 2000 to Jan 2010         10        1  ...     0.0          0.0   
+2           10  Mar 2000 to Feb 2010         10        2  ...     0.0          0.0   
+3           10  Apr 2000 to Mar 2010         10        3  ...     0.0          0.0   
+4           10  May 2000 to Apr 2010         10        4  ...     0.0          0.0   
+..         ...                ...        ...      ...     ...          ...   
+95          10  Dec 2008 to Nov 2018         10       95  ...     0.0          0.0   
+96          10  Jan 2009 to Dec 2018         10       96  ...     0.0          0.0   
+97          10  Feb 2009 to Jan 2019         10       97  ...     0.0          0.0   
+98          10  Mar 2009 to Feb 2019         10       98  ...     0.0          0.0   
+99          10  Apr 2009 to Mar 2019         10       99  ...     0.0          0.0   
+
+   MK-pvalue  IncreasingLikelihood  TrendDirection  SenSlope  LowerSlope  \
+0        1.0                   0.5  Indeterminate       0.0         0.0   
+1        1.0                   0.5  Indeterminate       0.0         0.0   
+2        1.0                   0.5  Indeterminate       0.0         0.0   
+3        1.0                   0.5  Indeterminate       0.0         0.0   
+4        1.0                   0.5  Indeterminate       0.0         0.0   
+..       ...                   ...             ...       ...         ...   
+95       1.0                   0.5  Indeterminate       0.0         0.0   
+96       1.0                   0.5  Indeterminate       0.0         0.0   
+97       1.0                   0.5  Indeterminate       0.0         0.0   
+98       1.0                   0.5  Indeterminate       0.0         0.0   
+99       1.0                   0.5  Indeterminate       0.0         0.0   
+
+   UpperSlope  
+0         0.0  
+1         0.0  
+2         0.0  
+3         0.0  
+4         0.0  
+..        ...  
+95        0.0  
+96        0.0  
+97        0.0  
+98        0.0  
+99        0.0  
+
+[100 rows x 24 columns]
+```
+
+```python
 # Calculate trends using the 'midpoint' reduction method
 results_midpoint = trend_data.trends(
     seasons_per_year=12,
@@ -200,4 +373,61 @@ results_midpoint = trend_data.trends(
 )
 
 print(results_midpoint)
+```
+
+Expected output:
+```
+   Frequency  SeasonsPeryear  TrendYear  TrendMonth  TrendSeason  TrendEnd  \
+0   Monthly              12       2000           1            1      2009   
+1   Monthly              12       2000           2            2      2009   
+2   Monthly              12       2000           3            3      2009   
+3   Monthly              12       2000           4            4      2009   
+4   Monthly              12       2000           5            5      2009   
+..      ...             ...        ...         ...          ...       ...   
+95  Monthly              12       2008          12           12      2019   
+96  Monthly              12       2009           1            1      2019   
+97  Monthly              12       2009           2            2      2019   
+98  Monthly              12       2009           3            3      2019   
+99  Monthly              12       2009           4            4      2019   
+
+   TrendLength  TrendPeriod  ValueCount  Minimum  ...  MK-S  MK-Variance  \
+0           10  Jan 2000 to Dec 2009         10        0  ...     0.0          0.0   
+1           10  Feb 2000 to Jan 2010         10        1  ...     0.0          0.0   
+2           10  Mar 2000 to Feb 2010         10        2  ...     0.0          0.0   
+3           10  Apr 2000 to Mar 2010         10        3  ...     0.0          0.0   
+4           10  May 2000 to Apr 2010         10        4  ...     0.0          0.0   
+..         ...                ...        ...      ...     ...          ...   
+95          10  Dec 2008 to Nov 2018         10       95  ...     0.0          0.0   
+96          10  Jan 2009 to Dec 2018         10       96  ...     0.0          0.0   
+97          10  Feb 2009 to Jan 2019         10       97  ...     0.0          0.0   
+98          10  Mar 2009 to Feb 2019         10       98  ...     0.0          0.0   
+99          10  Apr 2009 to Mar 2019         10       99  ...     0.0          0.0   
+
+   MK-pvalue  IncreasingLikelihood  TrendDirection  SenSlope  LowerSlope  \
+0        1.0                   0.5  Indeterminate       0.0         0.0   
+1        1.0                   0.5  Indeterminate       0.0         0.0   
+2        1.0                   0.5  Indeterminate       0.0         0.0   
+3        1.0                   0.5  Indeterminate       0.0         0.0   
+4        1.0                   0.5  Indeterminate       0.0         0.0   
+..       ...                   ...             ...       ...         ...   
+95       1.0                   0.5  Indeterminate       0.0         0.0   
+96       1.0                   0.5  Indeterminate       0.0         0.0   
+97       1.0                   0.5  Indeterminate       0.0         0.0   
+98       1.0                   0.5  Indeterminate       0.0         0.0   
+99       1.0                   0.5  Indeterminate       0.0         0.0   
+
+   UpperSlope  
+0         0.0  
+1         0.0  
+2         0.0  
+3         0.0  
+4         0.0  
+..        ...  
+95        0.0  
+96        0.0  
+97        0.0  
+98        0.0  
+99        0.0  
+
+[100 rows x 24 columns]
 ```
